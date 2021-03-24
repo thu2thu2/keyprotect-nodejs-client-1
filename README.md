@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/IBM/keyprotect-nodejs-client.svg?branch=main)](https://travis-ci.com/IBM/keyprotect-nodejs-client)
+[![Build Status](https://travis-ci.com/IBM/keyprotect-nodejs-client.svg?branch=master)](https://travis-ci.com/IBM/keyprotect-nodejs-client)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # IBM Cloud Key Protect Node.js SDK
@@ -150,7 +150,8 @@ the [IBM Cloud SDK Common documentation](https://github.com/IBM/ibm-cloud-sdk-co
 This project includes unit tests `test/unit` and integration tests `test/integration`.
 
 The integration tests are run against an actual Key Protect instance and require the auth.js file with 
-proper configuration values to be added.
+proper configuration values to be added under test/resources, use auth.example.js under the same directory 
+as example to create the auth.js file.
 
 To run the tests:
 

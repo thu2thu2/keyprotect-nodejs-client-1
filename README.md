@@ -36,6 +36,12 @@ IBM Cloud services:
   This SDK is tested with Node versions 12 and up. The SDK may work on previous versions, but this is not supported
   officially.
 
+## Installation
+
+```
+npm install @ibm-cloud/ibm-key-protect
+```
+
 ## Authentication
 
 Key Protect uses token-based Identity and Access Management (IAM) authentication. With IAM authentication, you supply an API key that is used to generate an access token. 
@@ -66,8 +72,8 @@ the [IBM Node.js SDK Core documentation](https://github.com/IBM/node-sdk-core/bl
 #### Examples
 
 ```js
-const KeyProtectV2 = require('../dist/ibm-key-protect-api/v2');
-const { IamAuthenticator } = require('../dist/auth');
+const KeyProtectV2 = require('@ibm-cloud/ibm-key-protect/ibm-key-protect-api/v2');
+const { IamAuthenticator } = require('@ibm-cloud/ibm-key-protect/auth');
 
 // env vars, using external configuration in this example
 const envConfigs = {

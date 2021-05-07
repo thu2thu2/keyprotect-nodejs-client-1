@@ -1,10 +1,10 @@
 {
   "name": "@ibm-cloud/ibm-key-protect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "IBM Cloud Key Protect Node SDK",
   "repository": {
     "type": "git",
-    "url": "https://github.com/IBM/keyprotect-nodejs-client"
+    "url": "git+https://github.com/IBM/keyprotect-nodejs-client.git"
   },
   "keywords": [
     "ibm",

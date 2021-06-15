@@ -1707,6 +1707,88 @@ describe('IbmKeyProtectApiV2', () => {
     });
   });
 
+  describe('patchKey', () => {
+    describe('positive tests', () => {
+      test('should pass the right params to createRequest', () => {
+        // Construct the params object for operation patchKey
+        const id = 'testString';
+        const bluemixInstance = 'testString';
+        const keyPatchBody = Buffer.from('This is a mock file.');
+        const correlationId = 'testString';
+        const xKmsKeyRing = 'testString';
+        const params = {
+          id: id,
+          bluemixInstance: bluemixInstance,
+          keyPatchBody: keyPatchBody,
+          correlationId: correlationId,
+          xKmsKeyRing: xKmsKeyRing,
+        };
+
+        const patchKeyResult = ibmKeyProtectApiService.patchKey(params);
+
+        // all methods should return a Promise
+        expectToBePromise(patchKeyResult);
+
+        // assert that create request was called
+        expect(createRequestMock).toHaveBeenCalledTimes(1);
+
+        const options = getOptions(createRequestMock);
+
+        checkUrlAndMethod(options, '/api/v2/keys/{id}', 'PATCH');
+        const expectedAccept = 'application/json';
+        const expectedContentType = 'application/vnd.ibm.kms.key+json';
+        checkMediaHeaders(createRequestMock, expectedAccept, expectedContentType);
+        checkUserHeader(createRequestMock, 'Bluemix-Instance', bluemixInstance);
+        checkUserHeader(createRequestMock, 'Correlation-Id', correlationId);
+        checkUserHeader(createRequestMock, 'X-Kms-Key-Ring', xKmsKeyRing);
+        expect(options.body).toEqual(keyPatchBody);
+        expect(options.path['id']).toEqual(id);
+      });
+
+      test('should prioritize user-given headers', () => {
+        // parameters
+        const id = 'testString';
+        const bluemixInstance = 'testString';
+        const userAccept = 'fake/accept';
+        const userContentType = 'fake/contentType';
+        const params = {
+          id,
+          bluemixInstance,
+          headers: {
+            Accept: userAccept,
+            'Content-Type': userContentType,
+          },
+        };
+
+        ibmKeyProtectApiService.patchKey(params);
+        checkMediaHeaders(createRequestMock, userAccept, userContentType);
+      });
+    });
+
+    describe('negative tests', () => {
+      test('should enforce required parameters', async done => {
+        let err;
+        try {
+          await ibmKeyProtectApiService.patchKey({});
+        } catch (e) {
+          err = e;
+        }
+
+        expect(err.message).toMatch(/Missing required parameters/);
+        done();
+      });
+
+      test('should reject promise when required params are not given', done => {
+        const patchKeyPromise = ibmKeyProtectApiService.patchKey();
+        expectToBePromise(patchKeyPromise);
+
+        patchKeyPromise.catch(err => {
+          expect(err.message).toMatch(/Missing required parameters/);
+          done();
+        });
+      });
+    });
+  });
   describe('deleteKey', () => {
     describe('positive tests', () => {
       test('should pass the right params to createRequest', () => {
@@ -1865,6 +1947,88 @@ describe('IbmKeyProtectApiV2', () => {
         expectToBePromise(getKeyMetadataPromise);
 
         getKeyMetadataPromise.catch(err => {
+          expect(err.message).toMatch(/Missing required parameters/);
+          done();
+        });
+      });
+    });
+  });
+  describe('purgeKey', () => {
+    describe('positive tests', () => {
+      test('should pass the right params to createRequest', () => {
+        // Construct the params object for operation purgeKey
+        const id = 'testString';
+        const bluemixInstance = 'testString';
+        const correlationId = 'testString';
+        const xKmsKeyRing = 'testString';
+        const prefer = 'return=representation';
+        const params = {
+          id: id,
+          bluemixInstance: bluemixInstance,
+          correlationId: correlationId,
+          xKmsKeyRing: xKmsKeyRing,
+          prefer: prefer,
+        };
+
+        const purgeKeyResult = ibmKeyProtectApiService.purgeKey(params);
+
+        // all methods should return a Promise
+        expectToBePromise(purgeKeyResult);
+
+        // assert that create request was called
+        expect(createRequestMock).toHaveBeenCalledTimes(1);
+
+        const options = getOptions(createRequestMock);
+
+        checkUrlAndMethod(options, '/api/v2/keys/{id}/purge', 'DELETE');
+        const expectedAccept = 'application/json';
+        const expectedContentType = undefined;
+        checkMediaHeaders(createRequestMock, expectedAccept, expectedContentType);
+        checkUserHeader(createRequestMock, 'Bluemix-Instance', bluemixInstance);
+        checkUserHeader(createRequestMock, 'Correlation-Id', correlationId);
+        checkUserHeader(createRequestMock, 'X-Kms-Key-Ring', xKmsKeyRing);
+        checkUserHeader(createRequestMock, 'Prefer', prefer);
+        expect(options.path['id']).toEqual(id);
+      });
+
+      test('should prioritize user-given headers', () => {
+        // parameters
+        const id = 'testString';
+        const bluemixInstance = 'testString';
+        const userAccept = 'fake/accept';
+        const userContentType = 'fake/contentType';
+        const params = {
+          id,
+          bluemixInstance,
+          headers: {
+            Accept: userAccept,
+            'Content-Type': userContentType,
+          },
+        };
+
+        ibmKeyProtectApiService.purgeKey(params);
+        checkMediaHeaders(createRequestMock, userAccept, userContentType);
+      });
+    });
+
+    describe('negative tests', () => {
+      test('should enforce required parameters', async done => {
+        let err;
+        try {
+          await ibmKeyProtectApiService.purgeKey({});
+        } catch (e) {
+          err = e;
+        }
+
+        expect(err.message).toMatch(/Missing required parameters/);
+        done();
+      });
+
+      test('should reject promise when required params are not given', done => {
+        const purgeKeyPromise = ibmKeyProtectApiService.purgeKey();
+        expectToBePromise(purgeKeyPromise);
+
+        purgeKeyPromise.catch(err => {
           expect(err.message).toMatch(/Missing required parameters/);
           done();
         });

@@ -59,7 +59,7 @@ the [IBM Node.js SDK Core documentation](https://github.com/IBM/node-sdk-core/bl
 - All methods return a Promise that either resolves with the response from the service or rejects with an Error. The
   response contains the body, the headers, the status code, and the status text. 
 - Use the `serviceUrl` parameter to set the endpoint URL that is specific to your Key Protect service instance. The 
-  endpoint can be either public or private, for example in the above auth.js configuration it can be:
+  endpoint can be either public or private, for example:
   
   ```
   serviceUrl: 'https://us-south.kms.cloud.ibm.com'

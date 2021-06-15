@@ -110,9 +110,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.KeyAlias>>}
    */
@@ -172,9 +172,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Empty>>}
    */
@@ -238,8 +238,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {number} [params.maxAllowedRetrievals] - The number of times that an import token can be retrieved within
    * its expiration time before it is no longer accessible.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the target key ring. This header is only required if the caller
-   * does not have access to the  `default` key ring.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
+   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
+   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.ImportToken>>}
    */
@@ -295,8 +296,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the target key ring. This header is only required if the caller
-   * does not have access to the  `default` key ring.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
+   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
+   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.GetImportToken>>}
    */
@@ -344,9 +346,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * instance.
    * @param {NodeJS.ReadableStream|Buffer} [params.keyActionWrapBody] - The base request for wrap key action.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.WrapKeyResponseBody>>}
    */
@@ -404,9 +406,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * instance.
    * @param {NodeJS.ReadableStream|Buffer} params.keyActionUnwrapBody - The base request for unwrap key action.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.UnwrapKeyResponseBody>>}
    */
@@ -458,9 +460,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * instance.
    * @param {NodeJS.ReadableStream|Buffer} params.keyActionRewrapBody - The base request for rewrap key action.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.RewrapKeyResponseBody>>}
    */
@@ -512,9 +514,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * instance.
    * @param {NodeJS.ReadableStream|Buffer} [params.keyActionRotateBody] - The base request for rotate key action.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {string} [params.prefer] - Alters server behavior for POST or DELETE operations. A header with
    * `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
    * `return=representation` returns both the key material and metadata in the response entity-body. If the key has been
@@ -573,9 +575,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Empty>>}
    */
@@ -623,9 +625,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Empty>>}
    */
@@ -672,9 +674,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Empty>>}
    */
@@ -721,9 +723,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Empty>>}
    */
@@ -779,9 +781,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Empty>>}
    */
@@ -808,6 +810,61 @@ class IbmKeyProtectApiV2 extends BaseService {
       },
       defaultOptions: extend(true, {}, this.baseOptions, {
         headers: extend(true, sdkHeaders, {
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
+  /*************************
+   * keyEvents
+   ************************/
+
+  /**
+   * Acknowledge key events.
+   *
+   * **Service to service calls only.** Acknowledges a key lifecycle event.
+   *
+   * When a customer performs an action on a root key, Key Protect uses Hyperwarp to notify the cloud services that are
+   * registered with the key. To acknowledge the Hyperwarp event, registered services must call
+   * `POST /api/v2/event_ack`.
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {NodeJS.ReadableStream|Buffer} params.body - The base request for acknowledging a key action events.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
+   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
+   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Empty>>}
+   */
+  public eventAcknowledge(params: IbmKeyProtectApiV2.EventAcknowledgeParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Empty>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['bluemixInstance', 'body'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const body = _params.body;
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'eventAcknowledge');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/event_ack',
+        method: 'POST',
+        body,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Content-Type': 'application/vnd.ibm.kms.event_acknowledge+json',
           'Bluemix-Instance': _params.bluemixInstance,
           'Correlation-Id': _params.correlationId,
           'X-Kms-Key-Ring': _params.xKmsKeyRing
@@ -1048,8 +1105,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    *
    * **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
    * time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
-   * @param {string} [params.xKmsKeyRing] - The ID of the target key ring. This header is only required if the caller
-   * does not have access to the  `default` key ring.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
+   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
+   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Key>>}
    */
@@ -1179,9 +1237,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.GetKey>>}
    */
@@ -1220,6 +1278,157 @@ class IbmKeyProtectApiV2 extends BaseService {
   };
 
   /**
+   * Invoke an action on a key.
+   *
+   * **Note:** This API has been **deprecated** and transitioned to individual request paths. Existing actions using
+   * this API will continue to be supported, but new actions will no longer be added to it. We recommend, if possible,
+   * aligning your request URLs to the new API path. The generic format of actions is now the following:
+   * `/api/v2/keys/<key_ID>/actions/<action>` where `key_ID` is the key you want to operate on/with and `action` is the
+   * same action that was passed as a query parameter previously.
+   *
+   * Invokes an action on a specified key. This method supports the following actions:
+   *
+   * - `disable`: [Disable operations](/docs/key-protect?topic=key-protect-disable-keys) for a key
+   * - `enable`: [Enable operations](/docs/key-protect?topic=key-protect-disable-keys#enable-api) for a key
+   * - `restore`: [Restore a root key](/docs/key-protect?topic=key-protect-restore-keys)
+   * - `rewrap`: Use a root key to [rewrap or reencrypt a data encryption
+   * key](/docs/key-protect?topic=key-protect-rewrap-keys)
+   * - `rotate`: [Create a new version](/docs/key-protect?topic=key-protect-rotate-keys) of a root key
+   * - `setKeyForDeletion`: [Authorize
+   * deletion](/docs/key-protect?topic=key-protect-delete-dual-auth-keys#set-key-deletion-api) for a key with a dual
+   * authorization policy
+   * - `unsetKeyForDeletion`: [Remove an
+   * authorization]((/docs/key-protect?topic=key-protect-delete-dual-auth-keys#unset-key-deletion-api) for a key with a
+   * dual authorization policy
+   * - `unwrap`: Use a root key to [unwrap or decrypt a data encryption
+   * key](/docs/key-protect?topic=key-protect-unwrap-keys)
+   * - `wrap`: Use a root key to [wrap or encrypt a data encryption key](/docs/key-protect?topic=key-protect-wrap-keys)
+   *
+   * **Note:** When you unwrap a wrapped data encryption key (WDEK) by using a rotated root key, the service returns a
+   * new ciphertext in the response entity-body. Each ciphertext remains available for `unwrap` actions. If you unwrap a
+   * DEK with a previous ciphertext, the service also returns the latest ciphertext and latest key version in the
+   * response. Use the latest ciphertext for future unwrap operations.
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.id - The v4 UUID that uniquely identifies the key.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {string} params.action - The action to perform on the specified key.
+   * @param {NodeJS.ReadableStream|Buffer} params.body - The base request for key actions.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.prefer] - Alters server behavior for POST or DELETE operations. A header with
+   * `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
+   * `return=representation` returns both the key material and metadata in the response entity-body. If the key has been
+   * designated as a root key, the system cannot return the key material.
+   *
+   * **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
+   * time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.KeyActionOneOfResponse>>}
+   */
+  public actionOnKey(params: IbmKeyProtectApiV2.ActionOnKeyParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.KeyActionOneOfResponse>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['id', 'bluemixInstance', 'action', 'body'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const body = _params.body;
+    const query = {
+      'action': _params.action
+    };
+
+    const path = {
+      'id': _params.id
+    };
+
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'actionOnKey');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/keys/{id}',
+        method: 'POST',
+        body,
+        qs: query,
+        path,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Accept': 'application/json',
+          'Content-Type': 'application/vnd.ibm.kms.key_action+json',
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing,
+          'Prefer': _params.prefer
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
+  /**
+   * Update (patch) a key.
+   *
+   * Update attributes of a key. Currently only the following attributes are applicable for update: - keyRingID Note: If
+   * provided, the `X-Kms-Key-Ring` header should specify the key's current key ring. To change the key ring of the key,
+   * specify the new key ring in the request body.
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.id - The v4 UUID that uniquely identifies the key.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {NodeJS.ReadableStream|Buffer} [params.keyPatchBody] - The base request for patch key.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.PatchKeyResponseBody>>}
+   */
+  public patchKey(params: IbmKeyProtectApiV2.PatchKeyParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.PatchKeyResponseBody>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['id', 'bluemixInstance'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const body = _params.keyPatchBody;
+    const path = {
+      'id': _params.id
+    };
+
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'patchKey');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/keys/{id}',
+        method: 'PATCH',
+        body,
+        path,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Accept': 'application/json',
+          'Content-Type': 'application/vnd.ibm.kms.key+json',
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
+  /**
    * Delete a key.
    *
    * Deletes a key by specifying the ID of the key.
@@ -1240,9 +1449,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {string} [params.prefer] - Alters server behavior for POST or DELETE operations. A header with
    * `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
    * `return=representation` returns both the key material and metadata in the response entity-body. If the key has been
@@ -1312,9 +1521,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.GetKeyMetadata>>}
    */
@@ -1353,19 +1562,80 @@ class IbmKeyProtectApiV2 extends BaseService {
   };
 
   /**
-   * Restore a key.
+   * Purge a deleted key.
    *
-   * [Restore a root key](/docs/key-protect?topic=key-protect-restore-keys).
+   * Purge all key metadata and registrations associated with the specified key. Purge key can only be applied to a key
+   * in the Destroyed (5) state.  After a key is deleted, there is a wait period of up to four hours before purge key
+   * operation is allowed.  **Important:** When you purge a key, you permanently shred its contents and associated data.
+   * The action cannot be reversed.
    *
    * @param {Object} params - The parameters to send to the service.
    * @param {string} params.id - The v4 UUID that uniquely identifies the key.
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
-   * @param {NodeJS.ReadableStream|Buffer} [params.keyRestoreBody] - The base request for restore key action.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.prefer] - Alters server behavior for POST or DELETE operations. A header with
+   * `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
+   * `return=representation` returns both the key material and metadata in the response entity-body. If the key has been
+   * designated as a root key, the system cannot return the key material.
+   *
+   * **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
+   * time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.PurgeKey>>}
+   */
+  public purgeKey(params: IbmKeyProtectApiV2.PurgeKeyParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.PurgeKey>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['id', 'bluemixInstance'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const path = {
+      'id': _params.id
+    };
+
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'purgeKey');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/keys/{id}/purge',
+        method: 'DELETE',
+        path,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Accept': 'application/json',
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing,
+          'Prefer': _params.prefer
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
+  /**
+   * Restore a key.
+   *
+   * [Restore a key](/docs/key-protect?topic=key-protect-restore-keys).
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.id - The v4 UUID that uniquely identifies the key.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {NodeJS.ReadableStream|Buffer} [params.keyRestoreBody] - The base request parameters for restore key action.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {string} [params.prefer] - Alters server behavior for POST or DELETE operations. A header with
    * `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
    * `return=representation` returns both the key material and metadata in the response entity-body. If the key has been
@@ -1430,9 +1700,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {number} [params.limit] - The number of key versions to retrieve. By default, `GET /versions` returns the
    * first 200 key versions. To retrieve a different set of key versions, use `limit` with `offset` to page through your
    * available resources. The maximum value for `limit` is 5,000.
@@ -1510,9 +1780,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * instance.
    * @param {SetKeyPoliciesOneOf} params.setKeyPoliciesOneOf - The base request for key policy create or update.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {string} [params.policy] - The type of policy that is associated with the specified key.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.GetKeyPoliciesOneOf>>}
@@ -1575,9 +1845,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {string} [params.policy] - The type of policy that is associated with the specified key.
    * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
    * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.GetKeyPoliciesOneOf>>}
@@ -1765,6 +2035,348 @@ class IbmKeyProtectApiV2 extends BaseService {
     return this.createRequest(parameters);
   };
 
+  /*************************
+   * registrations
+   ************************/
+
+  /**
+   * Create a registration.
+   *
+   * **Service to service calls only.** Creates a registration between a root key and a cloud resource, such as a Cloud
+   * Object Storage bucket. The key is identified by its ID, and the cloud resource is identified by its Cloud Resource
+   * Name (CRN).
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.id - The v4 UUID that uniquely identifies the key.
+   * @param {string} params.urlEncodedResourceCrn - The URL encoded [Cloud Resource
+   * Name](/docs/account?topic=account-crn) (CRN) that uniquely identifies the cloud resource. At minimum, provide a CRN
+   * that includes the `service-instance` segment.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {CollectionMetadata} [params.metadata] - The metadata that describes the resource array.
+   * @param {CreateRegistrationResourceBody[]} [params.resources] - A collection of resources.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Registration>>}
+   */
+  public createRegistration(params: IbmKeyProtectApiV2.CreateRegistrationParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Registration>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['id', 'urlEncodedResourceCrn', 'bluemixInstance'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const body = {
+      'metadata': _params.metadata,
+      'resources': _params.resources
+    };
+
+    const path = {
+      'id': _params.id,
+      'urlEncodedResourceCRN': _params.urlEncodedResourceCrn
+    };
+
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'createRegistration');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/keys/{id}/registrations/{urlEncodedResourceCRN}',
+        method: 'POST',
+        body,
+        path,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
+  /**
+   * Update a registration.
+   *
+   * **Service to service calls only.** Updates an existing registration based on the properties that you specify.
+   *
+   * When you call `PATCH /registrations`, Key Protect updates only the properties that you specify in the request
+   * entity-body. To replace the registration, use `PUT /registrations`.
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.id - The v4 UUID that uniquely identifies the key.
+   * @param {string} params.urlEncodedResourceCrn - The URL encoded [Cloud Resource
+   * Name](/docs/account?topic=account-crn) (CRN) that uniquely identifies the cloud resource. At minimum, provide a CRN
+   * that includes the `service-instance` segment.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {CollectionMetadata} [params.metadata] - The metadata that describes the resource array.
+   * @param {ModifiableRegistrationResourceBody[]} [params.resources] - A collection of resources.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Registration>>}
+   */
+  public updateRegistration(params: IbmKeyProtectApiV2.UpdateRegistrationParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Registration>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['id', 'urlEncodedResourceCrn', 'bluemixInstance'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const body = {
+      'metadata': _params.metadata,
+      'resources': _params.resources
+    };
+
+    const path = {
+      'id': _params.id,
+      'urlEncodedResourceCRN': _params.urlEncodedResourceCrn
+    };
+
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'updateRegistration');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/keys/{id}/registrations/{urlEncodedResourceCRN}',
+        method: 'PATCH',
+        body,
+        path,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
+  /**
+   * Replace a registration.
+   *
+   * **Service to service calls only.** Replace an existing registration between a root key and a cloud resource. The
+   * key is identified by its ID, and the cloud resource is identified by its Cloud Resource Name
+   * (CRN).
+   *
+   * When you call `PUT /registrations`, Key Protect replaces the existing registration with the properties that you
+   * provide in the request entity-body.
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.id - The v4 UUID that uniquely identifies the key.
+   * @param {string} params.urlEncodedResourceCrn - The URL encoded [Cloud Resource
+   * Name](/docs/account?topic=account-crn) (CRN) that uniquely identifies the cloud resource. At minimum, provide a CRN
+   * that includes the `service-instance` segment.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {CollectionMetadata} [params.metadata] - The metadata that describes the resource array.
+   * @param {ReplaceRegistrationResourceBody[]} [params.resources] - A collection of resources.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Registration>>}
+   */
+  public replaceRegistration(params: IbmKeyProtectApiV2.ReplaceRegistrationParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Registration>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['id', 'urlEncodedResourceCrn', 'bluemixInstance'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const body = {
+      'metadata': _params.metadata,
+      'resources': _params.resources
+    };
+
+    const path = {
+      'id': _params.id,
+      'urlEncodedResourceCRN': _params.urlEncodedResourceCrn
+    };
+
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'replaceRegistration');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/keys/{id}/registrations/{urlEncodedResourceCRN}',
+        method: 'PUT',
+        body,
+        path,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
+  /**
+   * Delete a registration.
+   *
+   * **Service to service calls only.** Deletes an existing registration between a root key and a cloud resource.
+   *
+   * This action permanently removes the registration from the Key Protect database.
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.id - The v4 UUID that uniquely identifies the key.
+   * @param {string} params.urlEncodedResourceCrn - The URL encoded [Cloud Resource
+   * Name](/docs/account?topic=account-crn) (CRN) that uniquely identifies the cloud resource. At minimum, provide a CRN
+   * that includes the `service-instance` segment.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.prefer] - Alters server behavior for POST or DELETE operations. A header with
+   * `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
+   * `return=representation` returns both the key material and metadata in the response entity-body. If the key has been
+   * designated as a root key, the system cannot return the key material.
+   *
+   * **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
+   * time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Registration>>}
+   */
+  public deleteRegistration(params: IbmKeyProtectApiV2.DeleteRegistrationParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.Registration>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['id', 'urlEncodedResourceCrn', 'bluemixInstance'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const path = {
+      'id': _params.id,
+      'urlEncodedResourceCRN': _params.urlEncodedResourceCrn
+    };
+
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'deleteRegistration');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/keys/{id}/registrations/{urlEncodedResourceCRN}',
+        method: 'DELETE',
+        path,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Accept': 'application/json',
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing,
+          'Prefer': _params.prefer
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
+  /**
+   * Deactivate a registration.
+   *
+   * **Deprecated.** Invokes an action, such as a deactivate operation, on a registration with the specified key ID and
+   * CRN.
+   *
+   * When a customer deletes a root key that is associated with a cloud resource, the registration between the resources
+   * moves to the
+   * `Suspended` state. As an integrated service, use
+   * `POST /keys/{id}/registrations?action=deactivate` to acknowledge the deletion. This action moves the registration
+   * to a `Deactivated` state.
+   *
+   * @param {Object} params - The parameters to send to the service.
+   * @param {string} params.id - The v4 UUID that uniquely identifies the key.
+   * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
+   * instance.
+   * @param {string} params.action - The action to perform on the specified key.
+   * @param {RegistrationActionOneOf} params.registrationActionOneOf - The base request for registration actions.
+   * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.prefer] - Alters server behavior for POST or DELETE operations. A header with
+   * `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
+   * `return=representation` returns both the key material and metadata in the response entity-body. If the key has been
+   * designated as a root key, the system cannot return the key material.
+   *
+   * **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
+   * time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
+   * @param {OutgoingHttpHeaders} [params.headers] - Custom request headers
+   * @returns {Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.ActionOnRegistrationResponse>>}
+   */
+  public actionOnRegistration(params: IbmKeyProtectApiV2.ActionOnRegistrationParams): Promise<IbmKeyProtectApiV2.Response<IbmKeyProtectApiV2.ActionOnRegistrationResponse>> {
+    const _params = Object.assign({}, params);
+    const requiredParams = ['id', 'bluemixInstance', 'action', 'registrationActionOneOf'];
+
+    const missingParams = getMissingParams(_params, requiredParams);
+    if (missingParams) {
+      return Promise.reject(missingParams);
+    }
+
+    const body = _params.registrationActionOneOf;
+    const query = {
+      'action': _params.action
+    };
+
+    const path = {
+      'id': _params.id
+    };
+
+    const sdkHeaders = getSdkHeaders(IbmKeyProtectApiV2.DEFAULT_SERVICE_NAME, 'v2', 'actionOnRegistration');
+
+    const parameters = {
+      options: {
+        url: '/api/v2/keys/{id}/registrations',
+        method: 'POST',
+        body,
+        qs: query,
+        path,
+      },
+      defaultOptions: extend(true, {}, this.baseOptions, {
+        headers: extend(true, sdkHeaders, {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Bluemix-Instance': _params.bluemixInstance,
+          'Correlation-Id': _params.correlationId,
+          'X-Kms-Key-Ring': _params.xKmsKeyRing,
+          'Prefer': _params.prefer
+        }, _params.headers),
+      }),
+    };
+
+    return this.createRequest(parameters);
+  };
+
   /**
    * List registrations for a key.
    *
@@ -1779,9 +2391,9 @@ class IbmKeyProtectApiV2 extends BaseService {
    * @param {string} params.bluemixInstance - The IBM Cloud instance ID that identifies your Key Protect service
    * instance.
    * @param {string} [params.correlationId] - The v4 UUID used to correlate and track transactions.
-   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key belongs to. When the header is
-   * not specified,  Key Protect will perform a key ring lookup. For a more optimized request,  specify the key ring on
-   * every call. The key ring ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+   * @param {string} [params.xKmsKeyRing] - The ID of the key ring that the specified key is a part of. When the  header
+   * is not specified, Key Protect will perform a key ring lookup. For  a more optimized request, specify the key ring
+   * on every call. The key ring ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
    * @param {number} [params.limit] - The number of registrations to retrieve. By default returns the first 200
    * registrations. To retrieve a different set of registrations, use
    * `limit` with `offset` to page through your available resources. The maximum value for `limit` is 5,000.
@@ -2008,9 +2620,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2034,9 +2646,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2060,8 +2672,9 @@ namespace IbmKeyProtectApiV2 {
     maxAllowedRetrievals?: number;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the target key ring. This header is only required if the caller does not have access to the
-     *  `default` key ring.
+    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
+     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
+     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2073,8 +2686,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the target key ring. This header is only required if the caller does not have access to the
-     *  `default` key ring.
+    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
+     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
+     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2090,9 +2704,9 @@ namespace IbmKeyProtectApiV2 {
     keyActionWrapBody?: NodeJS.ReadableStream|Buffer;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2108,9 +2722,9 @@ namespace IbmKeyProtectApiV2 {
     keyActionUnwrapBody: NodeJS.ReadableStream|Buffer;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2126,9 +2740,9 @@ namespace IbmKeyProtectApiV2 {
     keyActionRewrapBody: NodeJS.ReadableStream|Buffer;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2144,9 +2758,9 @@ namespace IbmKeyProtectApiV2 {
     keyActionRotateBody?: NodeJS.ReadableStream|Buffer;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     /** Alters server behavior for POST or DELETE operations. A header with
@@ -2178,9 +2792,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2194,9 +2808,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2210,9 +2824,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2226,9 +2840,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2240,6 +2854,22 @@ namespace IbmKeyProtectApiV2 {
     id: string;
     /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
     bluemixInstance: string;
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Parameters for the `eventAcknowledge` operation. */
+  export interface EventAcknowledgeParams {
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The base request for acknowledging a key action events. */
+    body: NodeJS.ReadableStream|Buffer;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
     /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
@@ -2334,8 +2964,9 @@ namespace IbmKeyProtectApiV2 {
      *  time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
      */
     prefer?: CreateKeyConstants.Prefer | string;
-    /** The ID of the target key ring. This header is only required if the caller does not have access to the
-     *  `default` key ring.
+    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
+     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
+     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2407,9 +3038,77 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Parameters for the `actionOnKey` operation. */
+  export interface ActionOnKeyParams {
+    /** The v4 UUID that uniquely identifies the key. */
+    id: string;
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The action to perform on the specified key. */
+    action: ActionOnKeyConstants.Action | string;
+    /** The base request for key actions. */
+    body: NodeJS.ReadableStream|Buffer;
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    /** Alters server behavior for POST or DELETE operations. A header with
+     *  `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
+     *  `return=representation` returns both the key material and metadata in the response entity-body. If the key has
+     *  been designated as a root key, the system cannot return the key material.
+     *
+     *  **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
+     *  time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
+     */
+    prefer?: ActionOnKeyConstants.Prefer | string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Constants for the `actionOnKey` operation. */
+  export namespace ActionOnKeyConstants {
+    /** The action to perform on the specified key. */
+    export enum Action {
+      DISABLE = 'disable',
+      ENABLE = 'enable',
+      RESTORE = 'restore',
+      REWRAP = 'rewrap',
+      ROTATE = 'rotate',
+      SETKEYFORDELETION = 'setKeyForDeletion',
+      UNSETKEYFORDELETION = 'unsetKeyForDeletion',
+      UNWRAP = 'unwrap',
+      WRAP = 'wrap',
+    }
+    /** Alters server behavior for POST or DELETE operations. A header with `return=minimal` causes the service to return only the key identifier, or metadata. A header containing `return=representation` returns both the key material and metadata in the response entity-body. If the key has been designated as a root key, the system cannot return the key material. **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request. */
+    export enum Prefer {
+      RETURN_REPRESENTATION = 'return=representation',
+      RETURN_MINIMAL = 'return=minimal',
+    }
+  }
+
+  /** Parameters for the `patchKey` operation. */
+  export interface PatchKeyParams {
+    /** The v4 UUID that uniquely identifies the key. */
+    id: string;
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The base request for patch key. */
+    keyPatchBody?: NodeJS.ReadableStream|Buffer;
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
@@ -2423,9 +3122,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     /** Alters server behavior for POST or DELETE operations. A header with
@@ -2467,12 +3166,46 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     headers?: OutgoingHttpHeaders;
+  }
+
+  /** Parameters for the `purgeKey` operation. */
+  export interface PurgeKeyParams {
+    /** The v4 UUID that uniquely identifies the key. */
+    id: string;
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    /** Alters server behavior for POST or DELETE operations. A header with
+     *  `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
+     *  `return=representation` returns both the key material and metadata in the response entity-body. If the key has
+     *  been designated as a root key, the system cannot return the key material.
+     *
+     *  **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
+     *  time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
+     */
+    prefer?: PurgeKeyConstants.Prefer | string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Constants for the `purgeKey` operation. */
+  export namespace PurgeKeyConstants {
+    /** Alters server behavior for POST or DELETE operations. A header with `return=minimal` causes the service to return only the key identifier, or metadata. A header containing `return=representation` returns both the key material and metadata in the response entity-body. If the key has been designated as a root key, the system cannot return the key material. **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request. */
+    export enum Prefer {
+      RETURN_REPRESENTATION = 'return=representation',
+      RETURN_MINIMAL = 'return=minimal',
+    }
   }
 
   /** Parameters for the `restoreKey` operation. */
@@ -2481,13 +3214,13 @@ namespace IbmKeyProtectApiV2 {
     id: string;
     /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
     bluemixInstance: string;
-    /** The base request for restore key action. */
+    /** The base request parameters for restore key action. */
     keyRestoreBody?: NodeJS.ReadableStream|Buffer;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     /** Alters server behavior for POST or DELETE operations. A header with
@@ -2519,9 +3252,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     /** The number of key versions to retrieve. By default, `GET /versions` returns the first 200 key versions. To
@@ -2554,9 +3287,9 @@ namespace IbmKeyProtectApiV2 {
     setKeyPoliciesOneOf: SetKeyPoliciesOneOf;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     /** The type of policy that is associated with the specified key. */
@@ -2581,9 +3314,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     /** The type of policy that is associated with the specified key. */
@@ -2657,6 +3390,158 @@ namespace IbmKeyProtectApiV2 {
     headers?: OutgoingHttpHeaders;
   }
 
+  /** Parameters for the `createRegistration` operation. */
+  export interface CreateRegistrationParams {
+    /** The v4 UUID that uniquely identifies the key. */
+    id: string;
+    /** The URL encoded [Cloud Resource Name](/docs/account?topic=account-crn) (CRN) that uniquely identifies the
+     *  cloud resource. At minimum, provide a CRN that includes the `service-instance` segment.
+     */
+    urlEncodedResourceCrn: string;
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The metadata that describes the resource array. */
+    metadata?: CollectionMetadata;
+    /** A collection of resources. */
+    resources?: CreateRegistrationResourceBody[];
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Parameters for the `updateRegistration` operation. */
+  export interface UpdateRegistrationParams {
+    /** The v4 UUID that uniquely identifies the key. */
+    id: string;
+    /** The URL encoded [Cloud Resource Name](/docs/account?topic=account-crn) (CRN) that uniquely identifies the
+     *  cloud resource. At minimum, provide a CRN that includes the `service-instance` segment.
+     */
+    urlEncodedResourceCrn: string;
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The metadata that describes the resource array. */
+    metadata?: CollectionMetadata;
+    /** A collection of resources. */
+    resources?: ModifiableRegistrationResourceBody[];
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Parameters for the `replaceRegistration` operation. */
+  export interface ReplaceRegistrationParams {
+    /** The v4 UUID that uniquely identifies the key. */
+    id: string;
+    /** The URL encoded [Cloud Resource Name](/docs/account?topic=account-crn) (CRN) that uniquely identifies the
+     *  cloud resource. At minimum, provide a CRN that includes the `service-instance` segment.
+     */
+    urlEncodedResourceCrn: string;
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The metadata that describes the resource array. */
+    metadata?: CollectionMetadata;
+    /** A collection of resources. */
+    resources?: ReplaceRegistrationResourceBody[];
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Parameters for the `deleteRegistration` operation. */
+  export interface DeleteRegistrationParams {
+    /** The v4 UUID that uniquely identifies the key. */
+    id: string;
+    /** The URL encoded [Cloud Resource Name](/docs/account?topic=account-crn) (CRN) that uniquely identifies the
+     *  cloud resource. At minimum, provide a CRN that includes the `service-instance` segment.
+     */
+    urlEncodedResourceCrn: string;
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    /** Alters server behavior for POST or DELETE operations. A header with
+     *  `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
+     *  `return=representation` returns both the key material and metadata in the response entity-body. If the key has
+     *  been designated as a root key, the system cannot return the key material.
+     *
+     *  **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
+     *  time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
+     */
+    prefer?: DeleteRegistrationConstants.Prefer | string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Constants for the `deleteRegistration` operation. */
+  export namespace DeleteRegistrationConstants {
+    /** Alters server behavior for POST or DELETE operations. A header with `return=minimal` causes the service to return only the key identifier, or metadata. A header containing `return=representation` returns both the key material and metadata in the response entity-body. If the key has been designated as a root key, the system cannot return the key material. **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request. */
+    export enum Prefer {
+      RETURN_REPRESENTATION = 'return=representation',
+      RETURN_MINIMAL = 'return=minimal',
+    }
+  }
+
+  /** Parameters for the `actionOnRegistration` operation. */
+  export interface ActionOnRegistrationParams {
+    /** The v4 UUID that uniquely identifies the key. */
+    id: string;
+    /** The IBM Cloud instance ID that identifies your Key Protect service instance. */
+    bluemixInstance: string;
+    /** The action to perform on the specified key. */
+    action: ActionOnRegistrationConstants.Action | string;
+    /** The base request for registration actions. */
+    registrationActionOneOf: RegistrationActionOneOf;
+    /** The v4 UUID used to correlate and track transactions. */
+    correlationId?: string;
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
+     */
+    xKmsKeyRing?: string;
+    /** Alters server behavior for POST or DELETE operations. A header with
+     *  `return=minimal` causes the service to return only the key identifier, or metadata. A header containing
+     *  `return=representation` returns both the key material and metadata in the response entity-body. If the key has
+     *  been designated as a root key, the system cannot return the key material.
+     *
+     *  **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation
+     *  time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request.
+     */
+    prefer?: ActionOnRegistrationConstants.Prefer | string;
+    headers?: OutgoingHttpHeaders;
+  }
+
+  /** Constants for the `actionOnRegistration` operation. */
+  export namespace ActionOnRegistrationConstants {
+    /** The action to perform on the specified key. */
+    export enum Action {
+      DEACTIVATE = 'deactivate',
+    }
+    /** Alters server behavior for POST or DELETE operations. A header with `return=minimal` causes the service to return only the key identifier, or metadata. A header containing `return=representation` returns both the key material and metadata in the response entity-body. If the key has been designated as a root key, the system cannot return the key material. **Note:** During POST operations, Key Protect may not immediately return the key material due to key generation time. To retrieve the key material, you can perform a subsequent `GET /keys/{id}` request. */
+    export enum Prefer {
+      RETURN_REPRESENTATION = 'return=representation',
+      RETURN_MINIMAL = 'return=minimal',
+    }
+  }
+
   /** Parameters for the `getRegistrations` operation. */
   export interface GetRegistrationsParams {
     /** The v4 UUID that uniquely identifies the key. */
@@ -2665,9 +3550,9 @@ namespace IbmKeyProtectApiV2 {
     bluemixInstance: string;
     /** The v4 UUID used to correlate and track transactions. */
     correlationId?: string;
-    /** The ID of the key ring that the specified key belongs to. When the header is not specified,  Key Protect
-     *  will perform a key ring lookup. For a more optimized request,  specify the key ring on every call. The key ring
-     *  ID of keys that are created without an  `X-Kms-Key-Ring` header is: `default`.
+    /** The ID of the key ring that the specified key is a part of. When the  header is not specified, Key Protect
+     *  will perform a key ring lookup. For  a more optimized request, specify the key ring on every call. The key ring
+     *  ID of keys that are created without an `X-Kms-Key-Ring` header is: `default`.
      */
     xKmsKeyRing?: string;
     /** The number of registrations to retrieve. By default returns the first 200 registrations. To retrieve a
@@ -2779,6 +3664,10 @@ namespace IbmKeyProtectApiV2 {
   /*************************
    * model interfaces
    ************************/
+
+  /** ActionOnRegistrationResponse. */
+  export interface ActionOnRegistrationResponse {
+  }
 
   /** Properties associated with the port associated with an instance with an allowed IP policy. */
   export interface AllowedIPPort {
@@ -3203,7 +4092,7 @@ namespace IbmKeyProtectApiV2 {
   }
 
   /** Properties that are associated with rotation policy. */
-  export interface GetMultipleKeyPoliciesResourcesItem {
+  export interface GetMultipleKeyPoliciesResource {
     /** The v4 UUID used to uniquely identify the policy resource, as specified by RFC 4122. */
     id: string;
     /** The Cloud Resource Name (CRN) that uniquely identifies your cloud. resources. */
@@ -3219,13 +4108,13 @@ namespace IbmKeyProtectApiV2 {
     /** Specifies the MIME type that represents the policy resource. Currently, only the default is supported. */
     type: string;
     /** Data associated with the dual authorization delete policy. */
-    dualAuthDelete?: GetMultipleKeyPoliciesResourcesItemDualAuthDelete;
+    dualAuthDelete?: GetMultipleKeyPoliciesResourceDualAuthDelete;
     /** Specifies the key rotation time interval in months, with a minimum of 1, and a maximum of 12. */
     rotation?: KeyPolicyRotationNonRequiredRotation;
   }
 
   /** Data associated with the dual authorization delete policy. */
-  export interface GetMultipleKeyPoliciesResourcesItemDualAuthDelete {
+  export interface GetMultipleKeyPoliciesResourceDualAuthDelete {
     /** If set to `true`, Key Protect enables a dual authorization policy on a single key.
      *
      *  After you enable the policy, Key Protect requires an authorization from two users to delete this key. For
@@ -3571,6 +4460,14 @@ namespace IbmKeyProtectApiV2 {
      *  `false` indicates that the key is unable to be restored.
      */
     restoreAllowed?: boolean;
+    /** A boolean that specifies if the key can be purged. A value of `true` indicates that the key can be purged. A
+     *  value of `false` indicates that the key is within the purge wait period and is not ready to be purged.
+     */
+    purgeAllowed?: boolean;
+    /** The date the key will be ready to be purged. */
+    purgeAllowedFrom?: string;
+    /** The date the deleted key will be automatically purged from Key Protect system. */
+    purgeScheduledOn?: string;
   }
 
   /** The metadata for the key algorithm. */
@@ -3621,97 +4518,6 @@ namespace IbmKeyProtectApiV2 {
   export interface KeyPolicyRotationRotation {
     /** Specifies the key rotation time interval in months. */
     interval_month: number;
-  }
-
-  /** Additional properties that describe a key. */
-  export interface KeyRepresentation {
-    /** Specifies the MIME type that represents the key resource. Currently, only the default is supported. */
-    type?: string;
-    /** The v4 UUID used to uniquely identify the resource, as specified by RFC 4122. */
-    id?: string;
-    /** A human-readable name to assign to your key.
-     *
-     *  To protect your privacy, do not use personal data, such as your name or location as the name for your key.
-     */
-    name?: string;
-    /** One or more, up to a total of five unique, human-readable aliases  assigned to your key.
-     *
-     *  To protect your privacy, do not use personal data, such as your name or location as an alias for your key.
-     *
-     *  Each alias must be alphanumeric and cannot contain spaces or special characters other than `-` or `_`. The alias
-     *  cannot be a UUID and must not be a Key Protect reserved name: `allowed_ip`, `key`,
-     *  `keys`, `metadata`, `policy`, `policies`, `registration`,
-     *  `registrations`, `ring`, `rings`, `rotate`, `wrap`, `unwrap`,
-     *  `rewrap`, `version`, `versions`.
-     */
-    aliases?: string[];
-    /** A text field used to provide a more detailed description of the key. The maximum length is 240 characters.
-     *
-     *  To protect your privacy, do not use personal data, such as your name or location, as a description for your key.
-     */
-    description?: string;
-    /** Up to 30 tags can be created. Tags can be between 0-30 characters, including spaces. Special characters not
-     *  permitted include the angled bracket, comma, colon, ampersand, and vertical pipe character
-     *  (|).
-     *
-     *  To protect your privacy, do not use personal data, such as your name or location, as a tag for your key.
-     */
-    tags?: string[];
-    /** The key state based on NIST SP 800-57. States are integers and correspond to the Pre-activation = 0, Active
-     *  = 1,  Suspended = 2, Deactivated = 3, and Destroyed = 5 values.
-     */
-    state?: number;
-    /** The date the key material expires. The date format follows RFC 3339. You can set an expiration date on any
-     *  key on its creation. If you create a key without specifying an expiration date, the key does not expire.
-     */
-    expirationDate?: string;
-    /** A boolean that determines whether the key material can leave the service.
-     *
-     *  If set to `false`, Key Protect designates the key as a nonextractable root key used for `wrap` and `unwrap`
-     *  actions. If set to `true`, Key Protect designates the key as a standard key that you can store in your apps and
-     *  services. Once set to `false` it cannot be changed to `true`.
-     */
-    extractable?: boolean;
-    /** The Cloud Resource Name (CRN) that uniquely identifies your cloud. resources. */
-    crn?: string;
-    /** A boolean that shows whether your key was originally imported or generated in Key Protect. The value is set
-     *  by Key Protect based on how the key material is initially added to the service.
-     *
-     *  A value of `true` indicates that you must provide new key material when it's time to rotate the key. A value of
-     *  `false` indicates that Key Protect will generate the new key material on a `rotate` operation, as it did in key
-     *  creation.
-     */
-    imported?: boolean;
-    /** The date the key material was created. The date format follows RFC 3339. */
-    creationDate?: string;
-    /** The unique identifier for the resource that created the key. */
-    createdBy?: string;
-    /** The algorithm type used to generate the key. Currently, AES is supported. */
-    algorithmType?: string;
-    /** The metadata for the key algorithm. */
-    algorithmMetadata?: KeyRepresentationAlgorithmMetadata;
-    /** The algorithm bit size used for key encryption. */
-    algorithmBitSize?: number;
-    /** The encryption scheme used to generate the key. Currently, `CBC_PAD` is supported. */
-    algorithmMode?: string;
-    /** A code indicating the reason the key is not in the activation state. */
-    nonactiveStateReason?: number;
-    /** Updates when any part of the key metadata is modified. The date format follows RFC 3339. */
-    lastUpdateDate?: string;
-    /** Updates to show when the key was last rotated. The date format follows RFC 3339. */
-    lastRotateDate?: string;
-    /** Properties associated with a specific key version. */
-    keyVersion?: KeyVersion;
-    /** Metadata that indicates the status of a dual authorization policy on the key. */
-    dualAuthDelete?: DualAuthKeyMetadata;
-  }
-
-  /** The metadata for the key algorithm. */
-  export interface KeyRepresentationAlgorithmMetadata {
-    /** The algorithm bit size used for key encryption. */
-    bitLength?: string;
-    /** The encryption scheme used to generate the key. Currently, `CBC_PAD` is supported. */
-    mode?: string;
   }
 
   /** Base properties of an instance key ring. */
@@ -3829,6 +4635,14 @@ namespace IbmKeyProtectApiV2 {
      *  `false` indicates that the key is unable to be restored.
      */
     restoreAllowed?: boolean;
+    /** A boolean that specifies if the key can be purged. A value of `true` indicates that the key can be purged. A
+     *  value of `false` indicates that the key is within the purge wait period and is not ready to be purged.
+     */
+    purgeAllowed?: boolean;
+    /** The date the key will be ready to be purged. */
+    purgeAllowedFrom?: string;
+    /** The date the deleted key will be automatically purged from Key Protect system. */
+    purgeScheduledOn?: string;
     /** The key material that you can export to external apps or services.
      *
      *  **Note:** If the key has been designated as a root key, the system cannot return the key material.
@@ -3865,7 +4679,7 @@ namespace IbmKeyProtectApiV2 {
     /** The metadata that describes the resource array. */
     metadata: CollectionMetadata;
     /** A collection of resources. */
-    resources?: KeyRepresentation[];
+    resources?: KeyFullRepresentation[];
   }
 
   /** User defined metadata that is associated with the `metrics` instance policy type. */
@@ -3908,6 +4722,22 @@ namespace IbmKeyProtectApiV2 {
      *  registered key version.
      */
     keyVersionId?: string;
+  }
+
+  /** The base schema for patch key response body. */
+  export interface PatchKeyResponseBody {
+    /** The metadata that describes the resource array. */
+    metadata?: CollectionMetadata;
+    /** An array of resources. */
+    resources?: KeyFullRepresentation[];
+  }
+
+  /** The base schema for purged key. */
+  export interface PurgeKey {
+    /** The metadata that describes the resource array. */
+    metadata: CollectionMetadata;
+    /** A collection of resources. */
+    resources: KeyFullRepresentation[];
   }
 
   /** Properties associated with a registration response. */
@@ -4135,18 +4965,18 @@ namespace IbmKeyProtectApiV2 {
     enforce_token?: boolean;
   }
 
-  /** SetMultipleKeyPoliciesResourcesItem. */
-  export interface SetMultipleKeyPoliciesResourcesItem {
+  /** Properties that are associated with key level dual authorization delete policy. */
+  export interface SetMultipleKeyPoliciesResource {
     /** Specifies the MIME type that represents the policy resource. Currently, only the default is supported. */
     type: string;
     /** Data associated with the dual authorization delete policy. */
-    dualAuthDelete?: SetMultipleKeyPoliciesResourcesItemDualAuthDelete;
+    dualAuthDelete: SetMultipleKeyPoliciesResourceDualAuthDelete;
     /** Specifies the key rotation time interval in months, with a minimum of 1, and a maximum of 12. */
-    rotation?: KeyPolicyRotationNonRequiredRotation;
+    rotation: SetMultipleKeyPoliciesResourceRotation;
   }
 
   /** Data associated with the dual authorization delete policy. */
-  export interface SetMultipleKeyPoliciesResourcesItemDualAuthDelete {
+  export interface SetMultipleKeyPoliciesResourceDualAuthDelete {
     /** If set to `true`, Key Protect enables a dual authorization policy on a single key.
      *
      *  After you enable the policy, Key Protect requires an authorization from two users to delete this key. For
@@ -4157,6 +4987,12 @@ namespace IbmKeyProtectApiV2 {
      *  **Note:** Once the dual authorization policy is set on the key, it cannot be reverted.
      */
     enabled: boolean;
+  }
+
+  /** Specifies the key rotation time interval in months, with a minimum of 1, and a maximum of 12. */
+  export interface SetMultipleKeyPoliciesResourceRotation {
+    /** Specifies the key rotation time interval in months. */
+    interval_month: number;
   }
 
   /** Properties that are associated with the response body of an unwrap action. */
@@ -4211,6 +5047,14 @@ namespace IbmKeyProtectApiV2 {
      *  that was used in the request.
      */
     keyVersion?: KeyVersion;
+  }
+
+  /** The base schema for the request body of deactivate registration. */
+  export interface ActionOnRegistrationResponseDeactivateRegistration extends ActionOnRegistrationResponse {
+    /** The metadata that describes the resource array. */
+    metadata?: CollectionMetadata;
+    /** A collection of resources. */
+    resources?: CloudResourceName[];
   }
 
   /** Properties that are associated with retrieving an instance level allowed IP policy. */
@@ -4282,7 +5126,7 @@ namespace IbmKeyProtectApiV2 {
     /** The metadata that describes the resource array. */
     metadata: CollectionMetadata;
     /** A collection of resources. */
-    resources: GetMultipleKeyPoliciesResourcesItem[];
+    resources: GetMultipleKeyPoliciesResource[];
   }
 
   /** Properties that are associated with the response body of an rewrap action. */
@@ -4432,7 +5276,7 @@ namespace IbmKeyProtectApiV2 {
     /** The metadata that describes the resource array. */
     metadata: CollectionMetadata;
     /** A collection of resources. */
-    resources: SetMultipleKeyPoliciesResourcesItem[];
+    resources: SetMultipleKeyPoliciesResource[];
   }
 
 }

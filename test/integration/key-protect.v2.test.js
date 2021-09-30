@@ -365,6 +365,19 @@ describe('key protect v2 integration', () => {
       done();
     });
 
+    // purge key should be done 4 hrs after key deletion, so expect to get error
+    it('purgeKey', async done => {
+      try {
+        const purgeKeyParams = Object.assign({}, options);
+        purgeKeyParams.id = keyId;
+        purgeKeyParams.prefer = 'return=representation';
+        await keyProtectClient.purgeKey(purgeKeyParams);
+      } catch (err) {
+        expect(err.body).toContain('REQ_TOO_EARLY_ERR');
+      }
+      done();
+    });
+
     it('retoreKey', async done => {
       // wait for 30 seconds after the key was deleted
       await new Promise(r => setTimeout(r, 30000));
@@ -601,7 +614,12 @@ describe('key protect v2 integration', () => {
   });
 
   describe('key ring', () => {
-    const keyRingId = 'nodejsKeyRingId';
+    // create unique key ring id
+    const keyRingId =
+      'testNodeSdkKeyRingId' +
+      Math.random()
+        .toString(36)
+        .substring(7);
     it('createKeyRing', async done => {
       let response;
       try {
@@ -611,7 +629,6 @@ describe('key protect v2 integration', () => {
       } catch (err) {
         done(err);
       }
-
       expect(response).toBeDefined();
       expect(response.status).toEqual(201);
       done();
@@ -626,8 +643,44 @@ describe('key protect v2 integration', () => {
       }
       expect(response).toBeDefined();
       expect(response.status).toEqual(200);
-      expect(response.result.resources[1].id).toEqual(keyRingId);
 
+      const keyRingIdArray = [];
+      for (let i = 0; i < response.result.resources.length; i++) {
+        keyRingIdArray.push(response.result.resources[i].id);
+      }
+      expect(keyRingIdArray).toContain(keyRingId);
+      done();
+    });
+
+    it('transferKeyRing', async done => {
+      let response;
+      try {
+        const transferKeyringParams = Object.assign({}, options);
+        transferKeyringParams.id = keyId;
+        transferKeyringParams.xKmsKeyRing = 'default';
+        const body = { 'keyRingID': keyRingId };
+        transferKeyringParams.keyPatchBody = body;
+        response = await keyProtectClient.patchKey(transferKeyringParams);
+      } catch (err) {
+        done(err);
+      }
+      expect(response).toBeDefined();
+      expect(response.status).toEqual(200);
+      expect(response.result.resources[0].keyRingID).toEqual(keyRingId);
+
+      // transfer the key back to 'default' key ring so that the test key ring can be deleted
+      try {
+        const transferKeyringParams = Object.assign({}, options);
+        transferKeyringParams.id = keyId;
+        transferKeyringParams.xKmsKeyRing = keyRingId;
+        const body = { 'keyRingID': 'default' };
+        transferKeyringParams.keyPatchBody = body;
+        response = await keyProtectClient.patchKey(transferKeyringParams);
+      } catch (err) {
+        done(err);
+      }
+      expect(response.status).toEqual(200);
+      expect(response.result.resources[0].keyRingID).toEqual('default');
       done();
     });
 

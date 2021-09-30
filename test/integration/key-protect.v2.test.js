@@ -2,6 +2,7 @@
 
 const KeyProtectV2 = require('../../dist/ibm-key-protect-api/v2');
 const authHelper = require('../resources/auth-helper.js');
+const ResourceControllerV2 = require('@ibm-cloud/platform-services/resource-controller/v2');
 const describe = authHelper.describe; // this runs describe.skip if there is no auth.js file
 
 const { IamAuthenticator } = require('../../dist/auth');
@@ -17,17 +18,44 @@ describe('key protect v2 integration', () => {
   // Create an IAM authenticator.
   const authenticator = new IamAuthenticator({
     apikey: options.apiKey,
-    url: options.iamAuthUrl,
+    url: 'https://iam.cloud.ibm.com/identity/token',
   });
 
-  // Construct the service client.
+  // Construct the key protect service client.
   const keyProtectClient = new KeyProtectV2({
     authenticator, // required
-    serviceUrl: options.serviceUrl,
+    serviceUrl: 'https://us-south.kms.cloud.ibm.com',
   });
 
-  // Set up - create key, this also serves as creating key test
+  // Construct the resource controller service client.
+  const resourceControllerClient = {
+    authenticator,
+    url: 'https://resource-controller.cloud.ibm.com',
+  };
+
+  let instanceGuid;
+
+  // Set up - create test instance and key, this also serves as creating key test
   beforeAll(async done => {
+    const resourceControllerService = new ResourceControllerV2(resourceControllerClient);
+    const instance_params = {
+      name: 'testInstance',
+      target: 'us-south',
+      resourceGroup: options.resourceGroup,
+      resourcePlanId: 'eedd3585-90c6-4c8f-be3d-062069e99fc3', // keyprotect tiered-pricing ID
+    };
+
+    resourceControllerService
+      .createResourceInstance(instance_params)
+      .then(res => {
+        instanceGuid = res.result.guid;
+      })
+      .catch(err => {
+        done(err);
+      });
+    // wait 30 seconds for completion of creating instance
+    await new Promise(r => setTimeout(r, 30000));
+    options.bluemixInstance = instanceGuid;
     const body = {
       metadata: {
         collectionType: 'application/vnd.ibm.kms.key+json',
@@ -56,16 +84,18 @@ describe('key protect v2 integration', () => {
     done();
   });
 
-  // Tear down - delete key
+  // Tear down - delete the test instance and key
   afterAll(async done => {
     try {
       const deleteKeyParams = Object.assign({}, options);
       deleteKeyParams.id = keyId;
       deleteKeyParams.prefer = 'return=representation';
       await keyProtectClient.deleteKey(deleteKeyParams);
+      await resourceControllerClient.deleteResourceInstance({ id: instanceGuid });
     } catch (err) {
       done(err);
     }
+
     done();
   });
 

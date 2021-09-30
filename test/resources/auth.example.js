@@ -19,9 +19,7 @@
 module.exports = {
   keyProtect: {
     apiKey: 'IBM Cloud APIKEY for the User',
-    iamAuthUrl: 'IAM Token Service URL',
-    serviceUrl: 'Service URL',
-    bluemixInstance: 'ID of the service instance to be used, use a clean/new instance for test',
+    resourceGroup: 'Short ID of the user resource group',
     correlationId: 'The v4 UUID used to correlate and track transactions',
   },
 };
